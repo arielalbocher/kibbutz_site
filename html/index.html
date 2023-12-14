@@ -1,14 +1,12 @@
-<!-- saved from url=(0028)http://hazorea.softmage.com/ -->
+<!DOCTYPE html>
 <html dir="rtl">
 
 <head>
     <meta charset="UTF-8">
-
-    <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
-
     <title>שיחות קיבוץ - קיבוץ הזורע - שידורי נסיון</title>
     <style type="text/css">
-        #myImage {
+     /* Your CSS styles here */
+     #myImage {
             display: none;
             position: fixed;
             /* התמונה תוצג במרכז המסך אופקית ואנכית */
@@ -25,6 +23,12 @@
             background-position: left top;            
             background-repeat: no-repeat;
             background-attachment: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-size: cover;
+            
+
         }
 
         a {
@@ -40,8 +44,8 @@
         }
 
         table {
-            max-width: 46%;
-            min-width: 46%;
+            max-width: 50%;
+            min-width: 50%;
 
         }
 
@@ -55,10 +59,6 @@
             background-color: rgba(0, 0, 0, 0.07);
         }
 
-        /* CSS עבור שורות זוגיות */
-        tr:nth-child(-2n+3) {
-            background-color: rgba(0, 0, 0, 0);
-        }
 
 
         h2 {
@@ -67,242 +67,107 @@
             margin-bottom: 0px;
         }
 
+        .link-container {
+        text-align: center;
+        }
+
+
+
+
+
     </style>
 
+    <script>
+
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        function isPortrait() {
+            return window.matchMedia("(orientation: portrait)").matches;
+        }
+
+        function showImage() {
+            var image = document.getElementById('myImage');
+            setTimeout(function () {
+                image.style.display = 'none'; // הסתרת התמונה אחרי שלוש שניות
+            }, 2000);
+
+            if (isMobileDevice() && isPortrait()) {
+                image.style.display = 'block'; // הצגת התמונה רק אם המכשיר הוא טלפון והוא באוריינטציה פורטרט
+            } else {
+                image.style.display = 'none';
+            }
+        }
+
+        window.addEventListener('resize', showImage);
+
+        function createTable(jsonData) {
+            const tableBody = document.getElementById("dynamic-table");
+            jsonData.forEach(data => {
+                const row = document.createElement("tr");
+
+                const imgCell = document.createElement("td");
+                const imgLink = document.createElement("a");
+                imgLink.href = data.link;
+
+                const img = document.createElement("img");
+                img.src = data.image;
+                img.alt = data.description;
+                imgLink.appendChild(img);
+                imgCell.appendChild(imgLink);
+                imgCell.setAttribute("align", "center");
+                row.appendChild(imgCell);
+
+                const descCell = document.createElement("td");
+                const descH4 = document.createElement("h3");
+                const descH3_2 = document.createElement("h4");
+                const descLink = document.createElement("a");
+                descLink.href = data.link;
+
+                descLink.textContent = data.title;
+                descH4.appendChild(descLink);
+                descH3_2.textContent = data.description;
+//               
+                descCell.appendChild(descH4);
+                descCell.appendChild(descH3_2);
+//
+                descCell.setAttribute("align", "center");
+                row.appendChild(descCell);
+
+                const dateCell = document.createElement("td");
+                dateCell.textContent = data.date || '';
+                dateCell.style.width = "20%"; // שינוי הרוחב ל-150 פיקסלים, ניתן לשנות לערך הרצוי
+        dateCell.style.textAlign = "center"; // יישור הטקסט למרכז התא
+                dateCell.setAttribute("align", "center");
+                row.appendChild(dateCell);
+
+                tableBody.appendChild(row);
+            });
+        }
+
+        function onloadStuff() {
+            showImage();
+
+            fetch('data.json')
+                .then(response => response.json())
+                .then(jsonData => {
+                    // בכאן תוכל להשתמש בנתונים מקובץ ה-JSON (jsonData) כדי ליצור טבלה או להציגם
+                    createTable(jsonData)
+                });
+        }
+
+    </script>    
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-37D23S3EXF"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-37D23S3EXF');
-</script>
-
-
-<body onload="hideImage()">
-
+<body onload="onloadStuff()">
     <div id="ex">
-
         <img id="myImage" src="https://imc-live.com/wp-content/uploads/2022/07/Rotate.gif" style="display: none;">
-
-
-
         <table border="0" cellspacing="10px">
-
-
             <h1>שיחות קיבוץ - קיבוץ הזורע - שידורי נסיון</h1><br>
-
-
-            <tr>
-                <td colspan="2">
-                    <h2><u>שיחות רגילות</u></h2><br>
-                </td>
-            </tr>
-
-
-
-
-
-            <tr>
-                <td>
-                    <a href="http://hazorea.softmage.com/12-09-2023/index.html">
-                        <img src="images/1.jpg" /> 
-                    </a>
-
-                </td>
-                <td>
-                    <h3 align="center">
-                        <a href="http://hazorea.softmage.com/12-09-2023/index.html">שיחה מתאריך - 12/09/2023</a>
-                    </h3>
-
-                </td>
-            </tr>
-
-
-            <tr>
-                <td colspan="2">
-                    <h2 class="no-background"><u>שיחות זוטא - תהליך השיוך</u></h2><br>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="http://hazorea.softmage.com/Zuta1/index.html"><img src="images/2.jpg" /></a>
-                    <br />
-                </td>
-
-                <td>
-
-                    <h3 align="center">
-                        <a href="http://hazorea.softmage.com/Zuta1/index.html">שיחה עם עו"ד רותם ליכטנשטיין</a>
-                        <br>
-                    </h3>
-                </td>
-
-            </tr>
-
-
-            <tr>
-                <td>
-                    <a href="http://hazorea.softmage.com/Zuta2/index.html"><img src="images/3.jpg" /></a>
-                </td>
-                <td>
-                    <h3 align="center"> <a href="http://hazorea.softmage.com/Zuta2/index.html">מחלקת הקרקעות בתנועה
-                            הקיבוצית</a><br>
-                    </h3>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td>
-                    <a href="http://hazorea.softmage.com/Zuta3/index.html"><img src="images/4.jpg" /></a>
-                </td>
-                <td>
-                    <h3 align="center"><a href="http://hazorea.softmage.com/Zuta3/index.html">שיחה עם עו"ד רותם
-                            ליכטנשטיין - הבהרות</a><br></h3>
-                </td>
-
-            </tr>
-
-
-            <tr>
-                <td>
-                    <a href="http://hazorea.softmage.com/Zuta4/index.html"><img src="images/5.jpg" /></a>
-                </td>
-                <td>
-                    <h3 align="center"><a href="http://hazorea.softmage.com/Zuta4/index.html">השוואה כללית בין חלופות
-                            השיוך</a><br>
-                    </h3>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td>
-                    <a href="http://hazorea.softmage.com/Zuta5/index.html"><img src="images/6.jpg" /></a>
-                </td>
-                <td>
-                    <h3 align="center"><a href="http://hazorea.softmage.com/Zuta5/index.html">גבעת חיים מאוחד</a><br>
-                    </h3>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td>
-                    <a href="http://hazorea.softmage.com/Zuta6Eyal/index.html"><img src="images/7.jpg" /></a>
-                </td>
-                <td>
-                    <h3 align="center"><a href="http://hazorea.softmage.com/Zuta6Eyal/index.html">שיוך בקיבוץ
-                            אייל</a><br></h3>
-                </td>
-
-            </tr>
-
-
-            <tr>
-                <td>
-                    <a href="http://hazorea.softmage.com/Zuta7Alonim/index.html"><img src="images/8.jpg" /></a>
-                </td>
-                <td>
-                    <h3 align="center"><a href="http://hazorea.softmage.com/Zuta7Alonim/index.html">שיוך באלונים</a><br>
-                    </h3>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td>
-                    <a href="http://hazorea.softmage.com/Zuta8Sasa/index.html"><img src="images/9.jpg" /></a>
-                </td>
-                <td>
-                    <h3 align="center"><a href="http://hazorea.softmage.com/Zuta8Sasa/index.html">שיוך בסאסא</a><br>
-                    </h3>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td>
-                    <a href="http://hazorea.softmage.com/Zuta9Gal1/index.html"><img src="images/10.jpg" /></a>
-                </td>
-                <td>
-                    <h3 align="center"><a href="http://hazorea.softmage.com/Zuta9Gal1/index.html">בחינת שיוך-שיחה 1</a><br>
-                    </h3>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td>
-                    <a href="http://hazorea.softmage.com/Zuta10Gal2/index.html"><img src="images/11.jpg" /></a>
-                </td>
-                <td>
-                    <h3 align="center"><a href="http://hazorea.softmage.com/Zuta10Gal2/index.html">בחינת שיוך-שיחה 2</a><br>
-                    </h3>
-                </td>
-            </tr>
-
-
-           
-
-        </table>
-
-
-
-
-
-
-
+            <tbody id="dynamic-table"></tbody>
+        </table>     
+    </div>
 </body>
 
 </html>
-
-
-
-<script>
-    function isMobileDevice() {
-        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
-
-    function showImage() {
-        var image = document.getElementById('myImage');
-
-        setTimeout(function () {
-            image.style.display = 'none'; // הסתרת התמונה אחרי שלוש שניות
-        }, 2000);
-
-        if (isMobileDevice()) {
-            image.style.display = 'block'; // הצגת התמונה אם המשתמש נכנס ממכשיר נייד
-        }
-    }
-
-
-    window.onload = showImage;
-
-</script>
-
-<script>
-    function isPortrait() {
-        return window.innerHeight > window.innerWidth;
-    }
-
-    function showImage() {
-        var image = document.getElementById('myImage');
-        setTimeout(function () {
-            image.style.display = 'none'; // הסתרת התמונה אחרי שלוש שניות
-        }, 2000);
-        if (isPortrait()) {
-            image.style.display = 'block';
-        } else {
-            image.style.display = 'none';
-        }
-    }
-
-    window.addEventListener('resize', showImage);
-    window.onload = showImage;
-</script>

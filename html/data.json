@@ -1,0 +1,88 @@
+[
+    {
+        "image": "images/5-12-2023.jpg",
+        "link": "http://hazorea.softmage.com/5-12-2023/index.html",
+        "title":"שיחת קיבוץ",
+        "description": "שיחה מתאריך 5/12/2023 - מועמדות ספי מנור, בחירת מנהל עסקי, חלוקת רווחים לחברים",
+        "date":"5/12/2023"
+    },
+    {
+        "image": "images/1.jpg",
+        "link": "http://hazorea.softmage.com/12-09-2023/index.html",
+        "title":"שיחת קיבוץ",
+        "description": "שיחה מתאריך - 12/09/2023",
+        "date":"12/09/2023"
+    },   
+    
+    {
+        "image": "images/11.jpg",
+        "link": "http://hazorea.softmage.com/Zuta10Gal2/index.html",
+        "title":"שיחת זוטא תהליך שיוך  ",
+        "description": "בחינת שיוך-שיחה 2" ,  
+        "date":"21/11/2023"                
+    },
+    {
+        "image": "images/10.jpg",
+        "link": "http://hazorea.softmage.com/Zuta9Gal1/index.html",
+        "title":"שיחת זוטא תהליך שיוך  ",
+        "description": "בחינת שיוך-שיחה 1",
+        "date":"14/11/2023"
+    },    
+    {
+        "image": "images/9.jpg",
+        "link": "http://hazorea.softmage.com/Zuta8Sasa/index.html",
+        "title":"שיחת זוטא תהליך שיוך  ",
+        "description": "שיוך בסאסא",
+        "date":"27/9/2023"
+    },
+    {
+        "image": "images/8.jpg",
+        "link": "http://hazorea.softmage.com/Zuta7Alonim/index.html",
+        "title":"שיחת זוטא תהליך שיוך  ",
+        "description": "שיוך באלונים",
+        "date":""
+    },
+    {
+        "image": "images/7.jpg",
+        "link": "http://hazorea.softmage.com/Zuta6Eyal/index.html",
+        "title":"שיחת זוטא תהליך שיוך  ",
+        "description": "שיוך בקיבוץ אייל",
+        "date":"25/7/2023"
+    },
+    {
+        "image": "images/6.jpg",
+        "link": "http://hazorea.softmage.com/Zuta5/index.html",
+        "title":"שיחת זוטא תהליך שיוך  ",
+        "description": "גבעת חיים מאוחד",
+        "date":"19/7/2023"
+    },
+    {
+        "image": "images/3.jpg",
+        "link": "http://hazorea.softmage.com/Zuta2/index.html",
+        "title":"שיחת זוטא תהליך שיוך  ",
+        "description": "מחלקת הקרקעות בתנועה הקיבוצית",
+        "date":"4/7/2023"
+    },
+    {
+        "image": "images/4.jpg",
+        "link": "http://hazorea.softmage.com/Zuta3/index.html",
+        "title":"שיחת זוטא תהליך שיוך  ",
+        "description": "שיחה עם עוד רותם ליכטנשטיין - הבהרות",
+        "date":"27/6/2023"
+    }, 
+    {
+        "image": "images/5.jpg",
+        "link": "http://hazorea.softmage.com/Zuta4/index.html",
+        "title":"שיחת זוטא תהליך שיוך",
+        "description": "השוואה כללית בין חלופות השיוך",
+        "date":"13/6/2023"
+    },  
+    {
+        "image": "images/2.jpg",
+        "link": "http://hazorea.softmage.com/Zuta1/index.html",
+        "title":"שיחת זוטא תהליך שיוך",
+        "description": "שיחה עם עוד רותם ליכטנשטיין",
+        "date":"6/6/2023"
+    }
+
+]
